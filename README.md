@@ -8,7 +8,8 @@ A) STR_genotyping
  2) gangSTR genotying (run_gangSTR.sh)
  3) ExpnasionHunter json file (eh.v5_w_gangstr.v13.polymorphic.json.gz)
  4) gangSTR STR bed file (gangstr.v13.polymorphic_w_eh.v5_offtarget.exp10_p05.top5_no_segdup.fast_2s.bed.gz)
- 5) Code to extract STR genotypes from vcf
+ 5) Code to extract STR genotypes from gangSTR vcf (parse_gangstr_genotypes.R)
+ 6) 
 
 B) Single STR association analyses
   1) Run single STR associations
