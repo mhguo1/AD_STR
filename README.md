@@ -4,7 +4,7 @@ Repository for code used in Guo et al. analysis of short tandem repeats in Alzhe
 
 Here is a summary of the code:
 
-A) STR_genotyping
+A) STR genotyping
  1) ExpansionHunter genotyping (run_EH.sh)
  2) gangSTR genotying (run_gangSTR.sh)
  3) ExpnasionHunter json file (eh.v5_w_gangstr.v13.polymorphic.json.gz)
@@ -21,3 +21,9 @@ C) Fisher's exact test for single STR burden analysis
 D) STR expansion analysis
   1) Identification of STR expansions using DBSCAN algorithm (run_dbscan.R)
   2) Parse DBSCAN results (parse_dbscan.R)
+
+E) Genomic annotations and enrichments
+ 1) Perform genomic annotations
+ 2) Run chromHMM enrichments (run_chromhmm_enrichment.R)
+ 3) Run transposable element enrichments (run_te_enrichment.R)
+ 4) Run Hippocampus histone ChIP enrichments from ENCODE (run_encode_histone_chip_enrichment.R)
