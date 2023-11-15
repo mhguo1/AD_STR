@@ -13,8 +13,7 @@ A) STR_genotyping
  7) Code to extract STR genotypes from gangSTR vcf files (parse_gangstr_genotypes.R)
  8) Code to extract coverage from gangSTR vcf files (parse_gangstr_coverage.R)
 
-B) Single STR association analyses
-  1) Run single STR associations
+B) Single STR association analyses (single_str_association_analysis.R)
 
 C) Fisher's exact test for single STR burden analysis
 
