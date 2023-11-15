@@ -1,3 +1,5 @@
+
+#This script will parse sequencing coverage from each STR site from gangSTR output vcfs
 library(stringr)
 
 sample_list<-list.files("/vcf/", pattern="gz")
