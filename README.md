@@ -20,4 +20,4 @@ C) Fisher's exact test for single STR burden analysis
 
 D) STR expansion analysis
   1) Identification of STR expansions using DBSCAN algorithm (run_dbscan.R)
-  2) 
+  2) Parse DBSCAN results (parse_dbscan.R)
