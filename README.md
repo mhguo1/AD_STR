@@ -3,6 +3,7 @@
 Repository for code used in Guo et al. analysis of short tandem repeats in Alzheimer's disease.
 
 Here is a summary of the code:
+
 A) STR_genotyping
  1) ExpansionHunter genotyping (run_EH.sh)
  2) gangSTR genotying (run_gangSTR.sh)
