@@ -19,5 +19,5 @@ B) Single STR association analyses (single_str_association_analysis.R)
 C) Fisher's exact test for single STR burden analysis
 
 D) STR expansion analysis
-  1) Identification of STR expansions using DBSCAN algorithm
+  1) Identification of STR expansions using DBSCAN algorithm (run_dbscan.R)
   2) 
