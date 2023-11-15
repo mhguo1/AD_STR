@@ -3,7 +3,7 @@ library(data.table)
 library(stringr)
 library(RNOmni)
 
-dat.annot<-read.delim("eh.v5_w_gangstr.v13.polymorphic.annotated.txt", header=T, sep="\t", stringsAsFactors = F) #read in bed file of STRs
+dat.annot<-read.delim("eh.v5_w_gangstr.v13.polymorphic.bed", header=T, sep="\t", stringsAsFactors = F) #read in bed file of STRs
 
 #Read in merged STR genotypes
 dat<-fread("EH_v5.merged.max_allele.txt.gz", header=T, sep="\t", data.table=F)
