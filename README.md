@@ -4,7 +4,16 @@ Repository for code used in Guo et al. analysis of short tandem repeats in Alzhe
 
 STR genotyping is performed using gangSTR v2.4.0 (available at https://github.com/gymreklab/GangSTR) and ExpansionHunter v5 (https://github.com/Illumina/ExpansionHunter). Both software programs were run on Amazon Web Services. The approximate run time using 4 Gb of RAM on AWS is 8 hours per sample for each software program.
 
-Custom code for processing STR genotype data was performed using R v3.6.3. 
+Custom code for processing STR genotype data was performed using R v3.6.3. The software depends on the following publicly available packages in R. Approximate installation time is < 5 minutes on a MacBook Pro.
+- regioneR v1.30.0
+- clusterProfiler v4.2.2
+- GenomicRanges v1.38.0
+- dbscan v1.1-11
+- RNOmni v1.0.1
+- stringr v1.5.0
+- reshape2 v1.4.4
+- data.table v1.13.0
+- RNOmni v1.0.1
 
 
 Here is a summary of the code:
