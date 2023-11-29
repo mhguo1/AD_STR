@@ -2,8 +2,12 @@
 
 Repository for code used in Guo et al. analysis of short tandem repeats in Alzheimer's disease.
 
-Here is a summary of the code:
+STR genotyping is performed using gangSTR v2.4.0 (available at https://github.com/gymreklab/GangSTR) and ExpansionHunter v5 (https://github.com/Illumina/ExpansionHunter). Both software programs were run on Amazon Web Services. The approximate run time using 4 Gb of RAM on AWS is 8 hours per sample for each software program.
 
+Custom code for processing STR genotype data was performed using R v3.6.3. 
+
+
+Here is a summary of the code:
 A) STR genotyping
  1) ExpansionHunter genotyping (run_EH.sh)
  2) gangSTR genotying (run_gangSTR.sh)
