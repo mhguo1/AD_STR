@@ -1,3 +1,9 @@
 #This folder contains a small test dataset for running the custom run_dbscan.R code. A portion of run_dbscan.R has been extracted to run_dbscan_test.R to utilize the test dataset.
 
-This code is to be run in R version 3.6.3.
+This code is to be run in R version 3.6.3. Required packages:
+- dbscan v1.1-11
+- stringr v1.5.0
+- data.table v1.13.0
+
+The code can be run as Rscript run_dbscan_test.R. The code can be run on the test dataset in approximately 10 seconds (using Macbook Pro with 2.4 GHz Quad Core processor 
+with 16 Gb of RAM).
