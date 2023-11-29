@@ -27,3 +27,6 @@ E) Genomic annotations and enrichments
  2) Run chromHMM enrichments (run_chromhmm_enrichment.R)
  3) Run transposable element enrichments (run_te_enrichment.R)
  4) Run Hippocampus histone ChIP enrichments from ENCODE (run_encode_histone_chip_enrichment.R)
+
+
+We also provide a simulated dataset for trialing the DBSCAN algorithm. This is provided along with a README in the test_dbscan folder.
