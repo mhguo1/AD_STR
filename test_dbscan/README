@@ -1,0 +1,3 @@
+#This folder contains a small test dataset for running the custom run_dbscan.R code. A portion of run_dbscan.R has been extracted to run_dbscan_test.R to utilize the test dataset.
+
+This code is to be run in R version 3.6.3.
