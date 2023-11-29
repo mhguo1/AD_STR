@@ -58,7 +58,6 @@ dat<-dat[,c(1:5, which(names(dat)%in%c(case_list, control_list)))]
 
 #Process STR site coverage file
 dat.site_cov<-dat.site_cov[,c(names(dat))]
-dat.site_cov$str<-paste0(dat.site_cov[,c(1:3)], collapse="_")
 
 #Helper function to calculate mode of STR tract lengths
 Mode <- function(x){ 
