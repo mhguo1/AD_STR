@@ -3,6 +3,8 @@ library(org.Mm.eg.db)
 library(clusterProfiler)
 library(stringr)
 library(biomaRt)
+library(ggplot2)
+
 human = useMart("ensembl", dataset = "hsapiens_gene_ensembl")
 mouse = useMart("ensembl", dataset = "mmusculus_gene_ensembl")
 
@@ -68,6 +70,3 @@ dat.plot$or<-(as.numeric(str_split_fixed(dat.plot$GeneRatio, "\\/", 2)[,1])/as.n
 ggplot(dat.plot[c(1:10),],aes(x=Description,y=-log10(pvalue)))+ 
   geom_point(cex=4)+coord_flip(ylim=c(5,13))+
   theme_classic()+scale_color_brewer(palette = "Set2")
-
-
-
