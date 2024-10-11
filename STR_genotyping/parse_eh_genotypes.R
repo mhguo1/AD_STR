@@ -7,8 +7,7 @@ for(s in sample_list){
   names(dat.bed)<-c("chr", "pos_start", "pos_end")
   dat.bed<-subset(dat.bed, chr!="chrX")
   dat.bed$index<-seq(1, nrow(dat.bed))
-
-
+  
   dat.vcf<-data.frame(chr=character(), pos_start=numeric(), gt=numeric(), stringsAsFactors = F)
   for(c in c(1:22)){
     
