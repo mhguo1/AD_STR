@@ -1,8 +1,6 @@
 
 #This script will parse sequencing coverage from each STR site from ExpansionHunter output vcfs
-
 library(stringr)
-
 
 sample_list<-list.files("/vcf/")
 for(s in sample_list){
@@ -11,10 +9,8 @@ for(s in sample_list){
   dat.bed<-subset(dat.bed, chr!="chrX")
   dat.bed$index<-seq(1, nrow(dat.bed))
 
-
   dat.vcf<-data.frame(chr=character(), pos_start=numeric(), coverage=numeric(), stringsAsFactors = F)
   for(c in c(1:22)){
-    
     #Read in vcf and obtain genotypes
     filename<-paste0(s, "/", s, ".eh-v5.chr", c, ".vcf.gz")
     dat.temp<-read.delim(filename, comment.char = "#", header=F, sep="\t")
