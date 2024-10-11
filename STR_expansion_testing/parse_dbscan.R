@@ -3,11 +3,9 @@ library(stringr)
 library(data.table)
 library(GenomicRanges)
 
-
 #Parse output from DBSCAN script
 dat.dbscan<-read.delim(paste0("eh_v5.dbscan_eps2.results_w_alleles_full_cov_stringent_max_allele_w_coverage.txt"), stringsAsFactors = F, sep="\t", header=T)
 dat.dbscan<-subset(dat.dbscan, !is.na(outliers))
-
 
 #Subset out segmental duplication regions#
 dat.dbscan$str_id<-paste0(dat.dbscan$chr, "_", dat.dbscan$pos_start, "_", dat.dbscan$pos_end)
@@ -34,11 +32,9 @@ for(i in c(1:nrow(dat.dbscan))){
   dat.out<-rbind(dat.temp, dat.out)
 }
 
-
 #Generate outlier counts per sample
 dat.out.sample<-data.frame(table(dat.out$sample), stringsAsFactors = F)
 names(dat.out.sample)<-c("sample", "outlier_count")
-
 
 #Read in PCA file (downloaded from NIAGADS)
 dat.pc<-read.delim("/pheno/17k_phenotype_pc_der_20220209.fix_PCR.csv", header=T, sep=",", stringsAsFactors = F)
@@ -82,5 +78,3 @@ write.table(dat.out, "eh_v5.dbscan_eps2.results_w_alleles_full_cov_stringent_max
 dat.out.summary<-merge(dat.out.sample, dat.pheno, all.x=T, all.y=F, by="sample")
 dat.out.summary$cohort<-str_split_fixed(dat.out.summary$sample, "\\.", Inf)[,2]
 write.table(dat.out.summary, "eh_v5.dbscan_eps2.results_w_alleles_full_cov_stringent_max_allele_w_coverage.results.txt", row.names=F, col.names=T, sep="\t", quote=F)
-
-#MannWhitney test
