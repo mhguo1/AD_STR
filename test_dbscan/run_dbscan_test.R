@@ -9,7 +9,6 @@ library(dbscan)
 minpts<-2
 eps<-2
 
-
 #Read in test annotation file
 dat.annot<-read.delim("test.annot.txt", header=T, sep="\t", stringsAsFactors = F) #read in bed file of STRs
 
@@ -26,12 +25,10 @@ dat.pheno<-read.delim("test.pheno.txt", header=T, sep="\t", stringsAsFactors = F
 
 dat.pheno<-subset(dat.pheno, SUBJID%in%names(dat))
 
-
 #Generate case and control sample lists
 case_list<-subset(dat.pheno, AD==1 & SUBJID%in%names(dat))$SUBJID
 control_list<-subset(dat.pheno, AD==0 & SUBJID%in%names(dat))$SUBJID
 dat<-dat[,c(1:5, which(names(dat)%in%c(case_list, control_list)))]
-
 
 #Process STR site coverage file
 dat.site_cov<-dat.site_cov[,c(names(dat))]
