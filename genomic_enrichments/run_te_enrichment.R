@@ -7,7 +7,6 @@ library(regioneR)
 library(data.table)
 library(stringr)
 
-
 #Remove samples with high numbers of expansions
 dat.dbscan.counts<-read.delim("/dbscan/eh_v5.dbscan_eps2.results_w_alleles_full_cov_stringent_max_allele_w_coverage.results.txt", header=T, sep="\t", stringsAsFactors = F)
 bad_sample_list<-subset(dat.dbscan.counts, outlier_count>148)$sample
@@ -52,8 +51,6 @@ dat.background.se<-makeGRangesFromDataFrame(dat.background,
                                             keep.extra.columns=TRUE) #Make into GRanges format
 
 
-
-
 #run TE Fisher's exact test
 dat.all<-data.frame(trial=numeric(), foreground_overlap=numeric(), background_overlap=numeric(), 
                     foreground_prop=numeric(), background_prop=numeric(), 
@@ -86,8 +83,6 @@ for(s in te_list){
     dat.all<-rbind(dat.all, dat.summary)
   }
 }
-
-
 
 
 #Calculate p-values using Fisher's exact test
