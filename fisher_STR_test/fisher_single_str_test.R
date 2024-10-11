@@ -9,7 +9,6 @@ dat.annot<-read.delim("eh.v5_w_gangstr.v13.polymorphic.bed", header=T, sep="\t",
 dat<-fread("EH_v5.merged.max_allele.txt.gz", header=T, sep="\t", data.table=F)
 dat<-cbind(dat.annot, dat[,4:ncol(dat)])
 
-
 #read in coverage file
 dat.site_cov<-fread("EH_v5.merged.coverage.txt.gz", header=T, sep="\t", data.table=F)
 dat.site_cov<-cbind(dat.annot, dat.site_cov[,4:ncol(dat.site_cov)])
@@ -41,7 +40,6 @@ dat.pheno$Platform<-factor(dat.pheno$Platform)
 #subset on samples of interest, coverage, and PC coordinates
 dat.pheno<-dat.pheno[grepl("ADC", dat.pheno$SUBJID),]
 dat.pheno<-subset(dat.pheno,PC1< (-0.0037) & PC2<0.02 & COV_avg>30 & COV_avg<50 & Platform=="HiSeqX")
-
 
 #Generate case and control columns
 dat_names<-names(dat)
