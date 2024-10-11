@@ -4,8 +4,6 @@ library(stringr)
 library(RNOmni)
 library(dbscan)
 
-
-
 dat.annot<-read.delim("eh.v5_w_gangstr.v13.polymorphic.bed", header=T, sep="\t", stringsAsFactors = F) #read in bed file of STRs
 
 #Read in merged STR genotypes
@@ -49,17 +47,14 @@ names(dat)[6:ncol(dat)]<-paste(str_split_fixed(names(dat)[6:ncol(dat)], "\\.", I
 names(dat.site_cov)[6:ncol(dat.site_cov)]<-paste(str_split_fixed(names(dat.site_cov)[6:ncol(dat.site_cov)], "\\.", Inf)[,1], str_split_fixed(names(dat.site_cov)[6:ncol(dat.site_cov)], "\\.", Inf)[,2], str_split_fixed(names(dat.site_cov)[6:ncol(dat.site_cov)], "\\.", Inf)[,3], sep=".")
 dat.pheno<-subset(dat.pheno, SUBJID%in%names(dat))
 
-
 #Generate case and control sample lists
 case_list<-subset(dat.pheno, AD==1 & SUBJID%in%names(dat))$SUBJID
 control_list<-subset(dat.pheno, AD==0 & SUBJID%in%names(dat))$SUBJID
 dat<-dat[,c(1:5, which(names(dat)%in%c(case_list, control_list)))]
 
-
 #Process STR site coverage file
 dat.site_cov<-dat.site_cov[,c(names(dat))]
 dat.site_cov$str<-paste0(dat.site_cov$chr, "_", dat.site_cov$pos_start,"_",dat.site_cov$pos_end)
-
 
 #Helper function to calculate mode of STR tract lengths
 Mode <- function(x){ 
