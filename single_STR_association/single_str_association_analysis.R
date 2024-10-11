@@ -69,7 +69,6 @@ non_ref_count<-function(temp_vector){
 }
 
 
-
 #Generate output file
 dat.test<-dat[,c(1:5)]
 dat.test$effect<-0
