@@ -7,10 +7,8 @@ for(s in sample_list){
   dat.bed<-read.delim("gangstr.v13.polymorphic_w_eh.v5_offtarget.exp10_p05.top5_no_segdup.fast_2s.bed", header=F, sep="\t", stringsAsFactors = F)
   dat.bed<-dat.bed[,c(1:3)]
   names(dat.bed)<-c("chr", "pos_start", "pos_end")
- # dat.bed<-subset(dat.bed, chr!="chrX")
   dat.bed$index<-seq(1, nrow(dat.bed))
   
-
   #Read in vcf and obtain genotypes
   filename<-s
   dat.temp<-read.delim(filename, comment.char = "#", header=F, sep="\t")
